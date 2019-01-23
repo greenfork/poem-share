@@ -2,3 +2,9 @@
 @import "poem";
 
 .header { margin-top: 2rem; }
+.header {
+    .main-header {
+        @extend h1;
+        text-decoration: none;
+    }
+}
