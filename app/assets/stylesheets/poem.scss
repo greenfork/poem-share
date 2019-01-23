@@ -1,5 +1,20 @@
-.header { margin-top: 2rem; }
 .write-poem { text-align: center; }
 .write-poem {
     textarea { height: unset; min-height: unset; margin-bottom: 0; }
+}
+
+.show-poem { text-align: center; }
+.show-poem {
+    .poem-view {
+        width: 50%;
+        background-color: white;
+        margin: auto;
+        padding: 2em 1em;
+        border: 1px solid #b1b1bc;
+    }
+}
+
+.show-link-to-poem { margin-top: 2rem; }
+.show-link-to-poem {
+    .url-holder { min-height: unset; height: unset; }
 }

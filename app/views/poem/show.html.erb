@@ -1,2 +1,11 @@
-<h1>Poem#show</h1>
-<p>Find me in app/views/poem/show.html.erb</p>
+<section class="show-poem">
+    <div class="poem-view">
+        <%= sanitize @poem, tags: %w( br ) %>
+    </div>
+</section>
+
+<section class="show-link-to-poem">
+    <p>You can copy the link from your browser address bar or copy it from the box below:</p>
+    <textarea class="u-full-width url-holder" rows="10" readonly="readonly"
+              onclick="this.focus();this.select()"><%= sanitize @url %></textarea>
+</section>
