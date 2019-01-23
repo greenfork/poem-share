@@ -2,8 +2,10 @@
 .write-poem {
     textarea { height: unset; min-height: unset; margin-bottom: 0;
                resize: vertical; }
-    .counter-wrapper { position: relative; }
+    .counter-wrapper { position: relative; text-align: right; }
     .counter { font-size: 0.8 * $font-size; position: relative; top: -2rem;}
+    .red { color: #e30000; }
+    .disabled { cursor: not-allowed; }
 }
 
 .show-poem { text-align: center; }
@@ -12,7 +14,7 @@
         width: 50%;
         background-color: white;
         margin: auto;
-        padding: 2em 1em;
+        padding: 3em 1em;
         border: 1px solid #b1b1bc;
     }
 }
