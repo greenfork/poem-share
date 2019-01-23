@@ -1,6 +1,7 @@
 class PoemController < ApplicationController
   def index
     @example_poem = File.read('resources/example_poem.txt')
+    @size_limit = Transform::Poem::SIZE_LIMIT
   end
 
   def show
@@ -10,6 +11,10 @@ class PoemController < ApplicationController
   end
 
   def create
+    if poem_create_params.size > Transform::Poem::SIZE_LIMIT
+      render 'index' and return
+    end
+
     encoded = Transform::Poem.encode(poem_create_params)
     redirect_to poem_show_path(hash: encoded)
   end

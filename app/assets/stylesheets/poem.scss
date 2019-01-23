@@ -1,6 +1,9 @@
 .write-poem { text-align: center; }
 .write-poem {
-    textarea { height: unset; min-height: unset; margin-bottom: 0; }
+    textarea { height: unset; min-height: unset; margin-bottom: 0;
+               resize: vertical; }
+    .counter-wrapper { position: relative; }
+    .counter { font-size: 0.8 * $font-size; position: absolute; top: -2rem; }
 }
 
 .show-poem { text-align: center; }
