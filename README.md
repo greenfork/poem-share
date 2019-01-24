@@ -25,3 +25,9 @@ $ bin/rails yarn install
 $ bin/rails spec
 $ bin/rails server
 ```
+
+## License
+
+Copyright © 2019 Dmitriy Matveyev
+
+Distributed under the MIT license, see LICENSE file.
