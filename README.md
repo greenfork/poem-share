@@ -1,6 +1,8 @@
 # Poem Share
 
-Share a Poem with a single link which will never expire!
+Share a Poem with a single link which will never expire! Check out [this one][1]!
+
+[1]: https://poem-share.herokuapp.com/poem/RFJFQU0NCg0KSXQgd2FzIGEgZHJlYW0gSSBuZXZlciBoYWQ7DQpJdCB3YXMgYSBkYXJrIGdyaW0gZGVhdGggYWhlYWQsDQpBIGJpdCBvZiBjb2xvcnMsIG5pY2UgYW5kIGJsb29tLA0KSSB3YWtlIHVwIHN3ZWF0aW5nLCBhZnRlcm5vb24u
 
 ## How does it work?
 
@@ -24,6 +26,30 @@ $ bin/bundle install --without production
 $ bin/yarn install
 $ bin/rails spec
 $ bin/rails server
+```
+
+Production for heroku:
+
+- Set `YARN_PRODUCTION` variable to `false`
+- Choose heroku/nodejs buildpack as #1
+- Choose https://github.com/bundler/heroku-buildpack-bundler2 buildpack as #2
+- Push
+
+Production, untested:
+
+``` shell
+$ export LANG=en_US.UTF-8
+$ export RAILS_ENV=production
+$ export RACK_ENV=production
+$ export DATABASE_URL=postgres://path/to/database
+$ export RAILS_SERVE_STATIC_FILES=true # if there's no nginx or etc.
+$ export SECRET_KEY_BASE=your_secret
+$ git clone https://github.com/greenfork/poem-share.git
+$ cd poem-share
+$ bin/yarn install
+$ bin/bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin --deployment
+$ bin/rake assets:precompile
+$ bin/bundle exec puma -C config/puma.rb
 ```
 
 ## License
