@@ -32,7 +32,7 @@ Production for heroku:
 
 - Set `YARN_PRODUCTION` variable to `false`
 - Choose heroku/nodejs buildpack as #1
-- Choose https://github.com/bundler/heroku-buildpack-bundler2 buildpack as #2
+- Choose heroku/ruby buildpack as #2
 - Push
 
 Production, untested:
