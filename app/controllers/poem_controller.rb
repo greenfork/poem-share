@@ -12,7 +12,7 @@ class PoemController < ApplicationController
 
   def create
     if poem_create_params.size > Transform::Poem::SIZE_LIMIT
-      render 'index' and return
+      redirect_to :root and return
     end
 
     encoded = Transform::Poem.encode(poem_create_params)
