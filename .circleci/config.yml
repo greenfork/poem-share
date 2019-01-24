@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/ruby:2.5.3-node-browsers
+      - image: circleci/ruby:2.5.1-node-browsers
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
@@ -21,7 +21,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}-{{ checksum "yarn.lock" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
@@ -35,7 +35,7 @@ jobs:
           paths:
             - ./vendor/bundle
             - ./node_modules
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}-{{ checksum "yarn.lock" }}
 
       # Database setup
       # - run: bundle exec rake db:create
@@ -51,7 +51,8 @@ jobs:
             bundle exec rspec --format progress \
                             --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
-                            --format progress \
+                            --format progress
+                            -- \
                             $TEST_FILES
 
       # collect reports
