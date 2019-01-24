@@ -1,4 +1,6 @@
 module Transform
+  # Transform an actual poem from text to url safe hash and in the
+  # opposite direction.
   class Poem
     # https://stackoverflow.com/q/417142/8598954
     #
