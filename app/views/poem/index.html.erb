@@ -1,23 +1,22 @@
 <section class="write-poem">
     <%= form_tag poem_create_path, method: :post do %>
         <div class="row">
-            <div class="two columns">&nbsp;</div>
+            <div class="two columns empty-column"></div>
             <div class="eight columns">
                 <%= text_area_tag :poem, '', size: '50x24',
                 placeholder: @example_poem, autofocus: true,
                 class: 'u-full-width' %>
             </div>
-            <div class="two columns">&nbsp;</div>
+            <div class="two columns empty-column"></div>
         </div>
         <div class="row">
-            <div class="five columns">&nbsp;</div>
+            <div class="five columns empty-column"></div>
             <div class="two columns">
                 <%= submit_tag 'Publish!' %>
             </div>
-            <div class="one column">&nbsp;</div>
+            <div class="one column empty-column"></div>
             <div class="two columns">
-                <div class="counter-wrapper">
-                    &nbsp;
+                <div class="counter-wrapper empty-column">
                     <span class="counter">0/<%= @size_limit %></span>
                 </div>
             </div>

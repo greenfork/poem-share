@@ -13,8 +13,11 @@
 .footer {
     padding: 8rem 3rem 2rem 3rem;
     background-color: khaki;
+    margin-top: 10rem;
 }
 .footer {
-    a { text-decoration: none; color: black; }
+    a { text-decoration: none; color: $font-color; }
     .github-link { text-align: right; }
 }
+
+.empty-column { min-height: 1px; }
