@@ -37,6 +37,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'rspec_junit_formatter'
+  gem 'simplecov', require: false
 end
 
 group :production do
