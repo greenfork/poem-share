@@ -20,7 +20,7 @@ Development:
 ``` shell
 $ git clone https://github.com/greenfork/poem-share.git
 $ cd poem-share
-$ bin/bundle install
+$ bin/bundle install --without production
 $ bin/yarn install
 $ bin/rails spec
 $ bin/rails server
