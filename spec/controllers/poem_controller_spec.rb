@@ -11,23 +11,15 @@ RSpec.describe PoemController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      get :show, params: { hash: '123abcABC' }
+      get :show, params: { hash: 'aA==' }
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #create" do
-    it "returns http success" do
-      post :create
-      expect(response).to have_http_status(:success)
+  describe "POST #create" do
+    it "redirects to #show if successful" do
+      post :create, params: { poem: 'h' }
+      expect(response).to redirect_to(action: :show, hash: 'aA==')
     end
   end
-
-  describe "GET #error" do
-    it "returns http success" do
-      get :error, params: { other: '(123abc' }
-      expect(response).to have_http_status(:success)
-    end
-  end
-
 end

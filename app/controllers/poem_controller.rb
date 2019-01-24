@@ -19,9 +19,6 @@ class PoemController < ApplicationController
     redirect_to poem_show_path(hash: encoded)
   end
 
-  def error
-  end
-
   private
   def poem_create_params
     params.require(:poem)
