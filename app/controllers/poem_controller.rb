@@ -5,9 +5,12 @@ class PoemController < ApplicationController
   end
 
   def show
-    @url = request.url
     @poem = Transform::Poem.decode(poem_show_params)
               .gsub(/\r\n/, '<br>')
+    @url = request.url
+  rescue ArgumentError
+    show_error_stubs
+    render status: :not_found
   end
 
   def create
@@ -26,5 +29,11 @@ class PoemController < ApplicationController
 
   def poem_show_params
     params.require(:hash)
+  end
+
+  def show_error_stubs
+    @poem = "The address appears to be incorrect, " +
+            "try to copy the link one more time."
+    @url = "Wrong link, sorry!"
   end
 end

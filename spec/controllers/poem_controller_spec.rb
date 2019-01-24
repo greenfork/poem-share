@@ -10,9 +10,18 @@ RSpec.describe PoemController, type: :controller do
   end
 
   describe "GET #show" do
-    it "returns http success" do
-      get :show, params: { hash: 'aA==' }
-      expect(response).to have_http_status(:success)
+    context "with the valid hash" do
+      it "returns http success" do
+        get :show, params: { hash: 'aA==' }
+        expect(response).to have_http_status(:success)
+      end
+    end
+
+    context "with the invalid hash" do
+      it "returns an error" do
+        get :show, params: { hash: 'abcaa' }
+        expect(response).to have_http_status(:not_found)
+      end
     end
   end
 
