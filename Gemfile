@@ -13,6 +13,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails', '~> 4.3'
 gem 'turbolinks', '~> 5'
 gem 'high_voltage'
+gem 'font-awesome-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
