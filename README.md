@@ -1,24 +1,27 @@
-# README
+# Poem Share
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Share a Poem with a single link which will never expire!
 
-Things you may want to cover:
+## How does it work?
 
-* Ruby version
+The text of a poem is encoded into url safe base64 encoding and later
+used to retrieve the same poem and put it into a beautiful layout to
+share.
 
-* System dependencies
+## Prerequisites
 
-* Configuration
+- Ruby v2.5+
+- NodeJS (or any kind of other environment for running JavaScript inside Ruby)
 
-* Database creation
+## How to use
 
-* Database initialization
+Development:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+``` shell
+$ git clone https://github.com/greenfork/poem-share.git
+$ cd poem-share
+$ bin/rails bundle install
+$ bin/rails yarn install
+$ bin/rails spec
+$ bin/rails server
+```
