@@ -5,19 +5,19 @@
             <div class="eight columns">
                 <%= text_area_tag :poem, '', size: '50x24',
                 placeholder: @example_poem, autofocus: true,
-                class: 'u-full-width' %>
+                class: 'u-full-width', :'data-js-poem-textarea' => true %>
             </div>
             <div class="two columns empty-column"></div>
         </div>
         <div class="row">
             <div class="five columns empty-column"></div>
             <div class="two columns">
-                <%= submit_tag 'Publish!' %>
+                <%= submit_tag 'Publish!', :'data-js-submit-poem' => true %>
             </div>
             <div class="one column empty-column"></div>
             <div class="two columns">
                 <div class="counter-wrapper empty-column">
-                    <span class="counter">0/<%= @size_limit %></span>
+                    <span class="counter" data-js-counter>0/<%= @size_limit %></span>
                 </div>
             </div>
         </div>
